@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sound Health Puzzle — Memory Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sound Health Puzzle</h1>
+      <p class="tagline">Solve quick memory puzzles with calming sounds — take a healthy break!</p>
+    </header>
+
+    <section class="controls">
+      <div class="left">
+        <label>🎵 Soundscape:
+          <select id="soundSelect">
+            <option value="none">— None —</option>
+            <option value="rain">🌧️ Rain</option>
+            <option value="waves">🌊 Waves</option>
+            <option value="chimes">🔔 Chimes</option>
+          </select>
+        </label>
+
+        <label>⚡ Difficulty:
+          <select id="difficultySelect">
+            <option value="easy">Easy (6 cards)</option>
+            <option value="medium" selected>Medium (12 cards)</option>
+            <option value="hard">Hard (18 cards)</option>
+          </select>
+        </label>
+
+        <button id="startBtn">🎮 Start Game</button>
+        <button id="enableSoundBtn" aria-live="polite">🔊 Enable Sound</button>
+      </div>
+
+      <div class="right stats">
+        <div>⏱️ Time: <span id="time">00:00</span></div>
+        <div>🎯 Moves: <span id="moves">0</span></div>
+        <div>✓ Matches: <span id="matches">0</span></div>
+      </div>
+    </section>
+
+    <main id="gameArea" class="game-area"></main>
+
+    <aside class="result-panel" id="resultPanel" aria-hidden="true">
+      <h2>🎉 Round Complete!</h2>
+      <p id="resultText"></p>
+      <p>Stress Index: <span id="stressIndex">—</span></p>
+      <button id="playAgainBtn">🔄 Play Again</button>
+      <button id="saveBtn">💾 Save Score</button>
+      <div class="best">
+        <h3>📊 Best Scores (local)</h3>
+        <div id="bestScores">No scores yet</div>
+      </div>
+    </aside>
+
+    <footer>
+      <small>💡 Tip: Use headphones for better relaxation effect. After 1–2 rounds you'll feel calmer! ♫</small>
+    </footer>
+  </div>
+
+  <audio id="bgAudio" loop preload="auto" crossorigin="anonymous"></audio>
+  <audio id="effectCorrect" preload="auto" crossorigin="anonymous"></audio>
+  <audio id="effectComplete" preload="auto" crossorigin="anonymous"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
